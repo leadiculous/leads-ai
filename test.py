@@ -41,7 +41,7 @@ for i, item in enumerate(items, 1):
     expected = item[3]
 
     result = classify(title, description, tags)
-    actual = result.classification
+    actual = result.is_relevant_topic
 
     print( f"Running test {i} '{title}'")
     print(result)

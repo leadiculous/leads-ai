@@ -16,7 +16,6 @@ class ClassificationResult:
             is_relevant_topic: bool,
             is_exact_topic: bool,
             is_topic_found_in_question: bool,
-            classification: bool,
             confidence_points: int,
             confidence_score: float
     ):
@@ -24,7 +23,6 @@ class ClassificationResult:
         self.is_relevant_topic = is_relevant_topic
         self.is_exact_topic = is_exact_topic
         self.is_topic_found_in_question = is_topic_found_in_question
-        self.classification = classification
         self.confidence_points = confidence_points
         self.confidence_score = confidence_score
 
@@ -72,5 +70,11 @@ def classify(title: str, description: str, tags: list):
 
     confidence_score = round(confidence_points / 3, 2)
 
-    return ClassificationResult(matched_topics, is_relevant_topic, is_exact_topic, is_topic_found_in_question,
-                                is_relevant_topic, confidence_points, confidence_score)
+    return ClassificationResult(
+        matched_topics,
+        is_relevant_topic,
+        is_exact_topic,
+        is_topic_found_in_question,
+        confidence_points,
+        confidence_score
+    )

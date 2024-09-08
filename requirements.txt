@@ -1,3 +1,6 @@
+grpcio==1.66.1
+grpcio-tools==1.66.1
+protobuf~=5.28.0
 torch==2.4.0
 transformers==4.44.2
 datasets~=2.21.0

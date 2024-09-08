@@ -1,1 +1,5 @@
 .idea/
+*pb2*.py*
+*.json
+results/
+fine-tuned-model/
