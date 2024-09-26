@@ -1,4 +1,5 @@
 import time
+from dataclasses import dataclass
 
 import torch
 from transformers import pipeline
@@ -11,17 +12,11 @@ classifier = pipeline(
 )
 
 
+@dataclass
 class ClassificationResult:
-    def __init__(
-            self,
-            matched_topics: list[tuple[str, float]],
-            score_threshold: float,
-            execution_time: float,
-
-    ):
-        self.matched_topics = matched_topics
-        self.score_threshold = score_threshold
-        self.execution_time = execution_time
+    matched_topics: list[tuple[str, float]]
+    score_threshold: float
+    execution_time: float
 
     def __str__(self):
         return str(self.__dict__)
